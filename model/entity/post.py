@@ -5,16 +5,13 @@ class Post(Base):
     __tablename__ = "post_tbl"
 
     id = Column(Integer,primary_key=True)
-#todo name = Column(String(30))
+    text=Column(String(30))
 
-
-
-    def __init__(self, id, profile, text, date_time):
+    def __init__(self, id, text):
         self.id = id
-        self.profile = profile
         self.text = text
         #self.image=image
-        self.date_time = date_time
+        #self.date_time = date_time
 
     def __repr__(self):
         return str(self.__dict__)
