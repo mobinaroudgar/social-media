@@ -1,18 +1,10 @@
-class PostDa:
-    def save(self,post):
-        pass
+from model.da.database import DatabaseManager
+from model.entity.post import Post
 
-    def edit(self,post):
-        pass
 
-    def remove(self,code):
-        pass
-
-    def find_all(self):
-        pass
-
-    def find_by_code(self,code):
-        pass
-
-    def find_by_profile_code(self,code):
-        pass
+class PostDa(DatabaseManager):
+    def find_by_text(self,word):
+        self.make_engine()
+        post_list=self.session.query(Post).filter(Post.text.like(f"%{word}%"))
+        self.session.close()
+        return post_list

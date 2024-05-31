@@ -7,6 +7,7 @@ class Profile(Base):
     id = Column(Integer,primary_key=True)
     name=Column(String(30))
     family=Column(String(30))
+    status = Column(Boolean)
 
     def __init__(self,id,name,family):
         self.id = id
