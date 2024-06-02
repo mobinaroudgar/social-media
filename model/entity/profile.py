@@ -1,3 +1,5 @@
+from sqlalchemy.orm import relationship
+
 from model.entity.base import Base
 from sqlalchemy import Integer,String,Column,Boolean,Date,Time
 
@@ -8,9 +10,9 @@ class Profile(Base):
     name=Column(String(30))
     family=Column(String(30))
     status = Column(Boolean)
+    post=relationship("Post")
 
-    def __init__(self,id,name,family):
-        self.id = id
+    def __init__(self,name,family):
         self.name = name
         self.family = family
         #self.username = username

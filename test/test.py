@@ -4,15 +4,24 @@ from model.entity.post import Post
 from model.entity.profile import Profile
 from sqlalchemy import  or_,and_,between
 
-#da=DatabaseManager()
-#pro=Profile(3,"reza","rezai")
-#da.save(pro)
+#da=PostDa()
 
-#post=Post(2,"alyek",pro)
+#da=DatabaseManager()
+
+#pro=Profile("rezabgg","reztyhjyai")
+#pro.status=1
+
+#post=Post("hii",pro)
 #da.save(post)
 
+#post=Post("slm b hame",pro)
+#da.save(post)
+
+#for a in da.find_by_text("hame"):
+ #   print(a.text)
 #post_list=da.find_all(Post)
 #for post in post_list:
+
 #    print(post.text,post.profile_id)
 
 #search:
@@ -31,5 +40,11 @@ from sqlalchemy import  or_,and_,between
 
 
 da=PostDa()
-for a in da.find_by_text("a"):
-    print(a.text)
+
+pro=Profile("new1", "newer2")
+#pro.status=False
+pro=da.find_by_id(Profile,4)
+
+post= Post("u?",pro)
+da.save(post)
+
